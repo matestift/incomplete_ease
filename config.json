@@ -1,0 +1,46 @@
+{
+    "wl_range": [250, 1700],
+    "data_file": "txtfiles/experiment_data.txt",
+    "material_layers": [
+        {
+            "name": "layer1",
+            "type": "composite",
+            "material1": "Ge",
+            "material2": "void",
+            "d": {"value": 100, "min": 90, "max": 300},
+            "fv": {"value": 0.6, "min": 0, "max": 1}
+        },
+        {
+            "name": "layer2",
+            "type": "composite",
+            "material1": "Si",
+            "material2": "void",
+            "d": {"value": 45, "min": 30, "max": 100},
+            "fv": {"value": 0.4, "min": 0, "max": 1}
+        },
+        {
+            "name": "layer3",
+            "type": "single",
+            "material": "Si",
+            "d": {"value": 20, "min": 10, "max": 100}
+        }
+
+    ],
+    "materials": {
+        "Ge": {
+            "file": "matfiles/Ge.mat"
+        },
+        "Si": {
+            "file": "matfiles/Si_JAW2.mat"
+        },
+        "void": {
+            "n": 1,
+            "e": 1
+        }
+    },
+    "substrate": "Ge",
+    "angle": {"value": 70, "min": 60, "max": 80},
+    "fit_method": "least_squares",
+    "use_parallel": true,
+    "fit_parameters": ["d_Si_layer3", "d_Ge_void_layer1", "fv_Si_void_layer2",  "angle"]
+}

@@ -4,16 +4,17 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "*"
+joblib = "*"
 tmm = "*"
+numpy = "*"
 lmfit = "*"
 matplotlib = "*"
 scipy = "*"
 numdifftools = "*"
-joblib = "*"
 psutil = "*"
 
 [dev-packages]
 
 [requires]
-python_version = ">=3.3"
+python_version = "3.11"
+python_full_version = "3.11.3"
