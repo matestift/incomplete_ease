@@ -104,6 +104,7 @@ The configuration is provided via a `config.json` file. Here is an example confi
 ### Ellipsometry Data File (`txtfiles/experimental_data.txt`)
 The ellipsometry data file should be a text file with three columns: wavelength(nm), Psi, and Delta at a specific angle of incidence. For example:
 
+
 300 30.5 180.2  
 305 30.7 179.8  
 310 31.0 179.5  
