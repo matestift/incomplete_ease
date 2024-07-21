@@ -136,13 +136,13 @@ python main.py
 ## Output
 
 ### Fitted Layer Structure
-  ![layer_structure_with_legend](layer_structure_with_legend.png)
+  ![layer_structure_with_legend](results/20240721_223327_Ge_void_Si_void_Si_substrate_Ge/layer_structure.png)
 
 ### Ellipsometry Results
 
- ![ellipsometry](ellipsometry.png)
+ ![ellipsometry](results/20240721_223327_Ge_void_Si_void_Si_substrate_Ge/ellipsometry_results.png)
 
-- [fit_report](fit_report.txt)
+- [fit_report](results/20240721_223327_Ge_void_Si_void_Si_substrate_Ge/fit_report.txt)
 ```txt
 [[Fit Statistics]]
     # fitting method   = least_squares

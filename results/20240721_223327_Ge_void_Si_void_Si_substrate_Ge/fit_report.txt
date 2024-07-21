@@ -26,6 +26,6 @@
     C(d_Si_layer3, angle)                   = -0.2121
     C(fv_Si_void_layer2, angle)             = -0.1580
 [[Latency]]
-    time: 6.593681 seconds
-    fit started: 2024-07-21 21:56:53
-    fit ended: 2024-07-21 21:56:59
+    time: 6.519683 seconds
+    fit started: 2024-07-21 22:33:27
+    fit ended: 2024-07-21 22:33:33

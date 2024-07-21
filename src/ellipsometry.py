@@ -100,20 +100,21 @@ def ema_model_func(e1, e2, fv):
     DIELECTRIC FUNCTION FROM THE EFFECTIVE MEDIUM APPROXIMATION
     fv: volume fraction ratio
     """
-    p = (e1 / e2) ** .5
+    p = (e1 / e2) ** 0.5
     b = ((3 * fv - 1) * (1 / p - p) + p) / 4
-    z = b + (b ** 2 + .5) ** .5
-    e = z * (e1 * e2) ** .5
+    z = b + (b**2 + 0.5) ** 0.5
+    e = z * (e1 * e2) ** 0.5
     return e
+
 
 def psi_delta_to_NCS(psi, delta):
     psi = np.asarray(psi)
     delta = np.asarray(delta)
-    
+
     N_t = np.cos(2 * psi)
     C_t = np.sin(2 * psi) * np.cos(delta)
     S_t = np.sin(2 * psi) * np.sin(delta)
-    
+
     if N_t.size == 1:
         return N_t.item(), C_t.item(), S_t.item()
     else:

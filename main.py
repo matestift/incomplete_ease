@@ -9,6 +9,21 @@ from src.ellipsometry import set_fit_parameters, psi_delta, psi_delta_to_NCS
 from src.file_utils import read_dat_txt, readeps
 
 
+def generate_execution_dir_name(start_time, material_layers, substrate):
+    timestamp = strftime("%Y%m%d_%H%M%S", start_time)
+    materials = "_".join(
+        [
+            (
+                f"{layer['material1']}_{layer['material2']}"
+                if layer["type"] == "composite"
+                else layer["material"]
+            )
+            for layer in material_layers
+        ]
+    )
+    return f"{timestamp}_{materials}_substrate_{substrate}"
+
+
 def main(config):
     try:
         wl_range = config["wl_range"]
@@ -71,15 +86,6 @@ def main(config):
         t_end = strftime("%Y-%m-%d %H:%M:%S", localtime())
         t = t1 - t0
 
-        fit_report_path = os.path.join(os.getcwd(), "fit_report.txt")
-        with open(fit_report_path, "w") as f:
-            f.write(lmfit.fit_report(result))
-            f.write(f"\n[[Latency]]\n    time: {t:.6f} seconds\n")
-            f.write(f"    fit started: {t_start}\n")
-            f.write(f"    fit ended: {t_end}\n")
-
-        print(f"Fit report saved to {fit_report_path}")
-
         NCS_c = NCS_m + result.residual
         NCS3 = len(wl)
         N_c, C_c, S_c = NCS_c[:NCS3], NCS_c[NCS3 : 2 * NCS3], NCS_c[2 * NCS3 :]
@@ -91,11 +97,32 @@ def main(config):
         return
 
     try:
+        parent_dir = "results"
+        os.makedirs(parent_dir, exist_ok=True)
+        execution_dir = os.path.join(
+            parent_dir,
+            generate_execution_dir_name(
+                start_time, config["material_layers"], config["substrate"]
+            ),
+        )
+        os.makedirs(execution_dir, exist_ok=True)
+
+        fit_report_path = os.path.join(execution_dir, "fit_report.txt")
+        with open(fit_report_path, "w") as f:
+            f.write(lmfit.fit_report(result))
+            f.write(f"\n[[Latency]]\n    time: {t:.6f} seconds\n")
+            f.write(f"    fit started: {t_start}\n")
+            f.write(f"    fit ended: {t_end}\n")
+
         plot_results(wl, N_m, C_m, S_m, N_c, C_c, S_c)
+        plt.savefig(os.path.join(execution_dir, "ellipsometry_results.png"))
+
         plot_layer_structure(
             config["material_layers"], result.params, config["substrate"]
         )
-        plt.show()
+        plt.savefig(os.path.join(execution_dir, "layer_structure.png"))
+
+        print(f"Results saved to {execution_dir}")
     except KeyboardInterrupt:
         print("KeyboardInterrupt received. Stopping the program.")
     except Exception as e:

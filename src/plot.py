@@ -26,8 +26,6 @@ def plot_results(wl, N_m, C_m, S_m, N_c, C_c, S_c):
             tick.set_rotation(45)
 
     plt.tight_layout(rect=[0, 0, 1, 0.96])
-    plt_file = os.path.join(os.getcwd(), "ellipsometry.png")
-    plt.savefig(plt_file)
 
 
 def plot_layer_structure(material_layers, params, substrate):
@@ -120,4 +118,3 @@ def plot_layer_structure(material_layers, params, substrate):
     )
 
     plt.tight_layout()
-    plt.savefig("layer_structure_with_legend.png", bbox_inches="tight")
