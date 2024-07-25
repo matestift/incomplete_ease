@@ -1,0 +1,24 @@
+[[Fit Statistics]]
+    # fitting method   = least_squares
+    # function evals   = 40
+    # data points      = 1089
+    # variables        = 4
+    chi-square         = 4.2812e-04
+    reduced chi-square = 3.9458e-07
+    Akaike info crit   = -16053.7958
+    Bayesian info crit = -16033.8237
+[[Variables]]
+    d_Ge_void_layer1:   109.970347 +/- 0.00777737 (0.01%) (init = 100)
+    fv_Ge_void_layer1:  0.6 (fixed)
+    d_Si_void_layer2:   45 (fixed)
+    fv_Si_void_layer2:  0.30043465 +/- 6.8920e-05 (0.02%) (init = 0.4)
+    d_Si_layer3:        26.0752861 +/- 0.00916484 (0.04%) (init = 20)
+    angle:              64.9985967 +/- 6.4996e-04 (0.00%) (init = 70)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(fv_Si_void_layer2, d_Si_layer3)      = +0.9555
+    C(d_Ge_void_layer1, d_Si_layer3)       = -0.9306
+    C(d_Ge_void_layer1, fv_Si_void_layer2) = -0.9203
+[[Latency]]
+    time: 41.565580 seconds
+    fit started: 2024-07-25 14:46:12
+    fit ended: 2024-07-25 14:46:53

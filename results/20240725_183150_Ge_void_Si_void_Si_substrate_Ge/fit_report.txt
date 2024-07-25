@@ -1,0 +1,31 @@
+[[Fit Statistics]]
+    # fitting method   = least_squares
+    # function evals   = 48
+    # data points      = 1089
+    # variables        = 5
+    chi-square         = 4.2042e-04
+    reduced chi-square = 3.8784e-07
+    Akaike info crit   = -16071.5658
+    Bayesian info crit = -16046.6008
+[[Variables]]
+    d_Ge_void_layer1:   109.959218 +/- 0.00810701 (0.01%) (init = 100)
+    fv_Ge_void_layer1:  0.59994863 +/- 1.1530e-05 (0.00%) (init = 0.6)
+    d_Si_void_layer2:   45 (fixed)
+    fv_Si_void_layer2:  0.30034459 +/- 7.1325e-05 (0.02%) (init = 0.4)
+    d_Si_layer3:        26.0591666 +/- 0.00979206 (0.04%) (init = 20)
+    angle:              65.0017358 +/- 9.5459e-04 (0.00%) (init = 70)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(fv_Si_void_layer2, d_Si_layer3)       = +0.9563
+    C(d_Ge_void_layer1, fv_Si_void_layer2)  = -0.7525
+    C(fv_Ge_void_layer1, angle)             = -0.7378
+    C(d_Ge_void_layer1, d_Si_layer3)        = -0.7091
+    C(fv_Ge_void_layer1, d_Si_layer3)       = +0.3709
+    C(d_Ge_void_layer1, fv_Ge_void_layer1)  = +0.3064
+    C(fv_Ge_void_layer1, fv_Si_void_layer2) = +0.2849
+    C(d_Ge_void_layer1, angle)              = -0.2841
+    C(d_Si_layer3, angle)                   = -0.2121
+    C(fv_Si_void_layer2, angle)             = -0.1580
+[[Latency]]
+    time: 5.418590 seconds
+    fit started: 2024-07-25 18:31:50
+    fit ended: 2024-07-25 18:31:56

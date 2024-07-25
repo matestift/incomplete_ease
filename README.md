@@ -136,13 +136,13 @@ python main.py
 ## Output
 
 ### Fitted Layer Structure
-  ![layer_structure_with_legend](layer_structure_with_legend.png)
+  ![layer_structure_with_legend](results/20240721_223327_Ge_void_Si_void_Si_substrate_Ge/layer_structure.png)
 
 ### Ellipsometry Results
 
- ![ellipsometry](ellipsometry.png)
+ ![ellipsometry](results/20240721_223327_Ge_void_Si_void_Si_substrate_Ge/ellipsometry_results.png)
 
-- [fit_report](fit_report.txt)
+- [fit_report](results/20240721_223327_Ge_void_Si_void_Si_substrate_Ge/fit_report.txt)
 ```txt
 [[Fit Statistics]]
     # fitting method   = least_squares
@@ -171,9 +171,28 @@ python main.py
 
 ```
 
+
+## Parallelism
+Parallel processing capabilities have been significantly enhanced to better handle larger datasets. However, these capabilities are not yet in their optimal state and further improvements are ongoing. A benchmark script is available in [docs/time_complexity.py](docs/time_complexity.py).
+
+The results of running the script with the configuration in [docs/config.json](docs/config.json) can be found here:
+
+![time_complexity.png](docs/time_complexity.png)
+
+The properties of the system used for running the script are:
+```bash
+System Information:
+System: Windows
+Node Name: engine
+Release: 10
+Version: 10.0.22631
+Machine: AMD64
+Processor: Intel64 Family 6 Model 140 Stepping 2, GenuineIntel
+Python Version: 3.11.3
+```
+
 ## TODO
 - Add more ellipsometry methods like Rigorous Coupled-Wave Analysis (RCWA)
 - Improve the user interface for configuring the fitting process
-- Enhance parallel processing capabilities to handle larger datasets efficiently
 - Handle materials and experimental data in different formats
-Process data that contain variable angles
+- Process data that contain variable angles

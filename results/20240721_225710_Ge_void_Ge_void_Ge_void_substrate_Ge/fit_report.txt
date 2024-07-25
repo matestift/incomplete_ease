@@ -1,0 +1,40 @@
+[[Fit Statistics]]
+    # fitting method   = least_squares
+    # function evals   = 144
+    # data points      = 2004
+    # variables        = 7
+    chi-square         = 8.52148581
+    reduced chi-square = 0.00426714
+    Akaike info crit   = -10928.4607
+    Bayesian info crit = -10889.2404
+[[Variables]]
+    d_Ge_void_layer1:   26.6607591 +/- 0.77153615 (2.89%) (init = 10)
+    fv_Ge_void_layer1:  0.53030631 +/- 0.00505075 (0.95%) (init = 0.5)
+    d_Ge_void_layer2:   1600.00000 +/- 16.1624159 (1.01%) (init = 1700)
+    fv_Ge_void_layer2:  0.45172801 +/- 0.00583493 (1.29%) (init = 0.5)
+    d_Ge_void_layer3:   90.0000000 +/- 1.56773710 (1.74%) (init = 100)
+    fv_Ge_void_layer3:  0.28334244 +/- 0.00633087 (2.23%) (init = 0.5)
+    angle:              66.9390470 +/- 0.17839714 (0.27%) (init = 70)
+[[Correlations]] (unreported correlations are < 0.100)
+    C(d_Ge_void_layer2, fv_Ge_void_layer2)  = +0.9781
+    C(fv_Ge_void_layer1, fv_Ge_void_layer2) = +0.9370
+    C(fv_Ge_void_layer2, angle)             = -0.9290
+    C(fv_Ge_void_layer1, d_Ge_void_layer2)  = +0.9234
+    C(fv_Ge_void_layer1, angle)             = -0.9105
+    C(d_Ge_void_layer2, angle)              = -0.9017
+    C(d_Ge_void_layer3, fv_Ge_void_layer3)  = +0.7207
+    C(fv_Ge_void_layer2, fv_Ge_void_layer3) = +0.5630
+    C(fv_Ge_void_layer1, fv_Ge_void_layer3) = +0.5289
+    C(fv_Ge_void_layer3, angle)             = -0.5262
+    C(fv_Ge_void_layer2, d_Ge_void_layer3)  = +0.5249
+    C(d_Ge_void_layer3, angle)              = -0.4966
+    C(fv_Ge_void_layer1, d_Ge_void_layer3)  = +0.4957
+    C(d_Ge_void_layer2, fv_Ge_void_layer3)  = +0.4192
+    C(d_Ge_void_layer2, d_Ge_void_layer3)   = +0.3868
+    C(d_Ge_void_layer1, fv_Ge_void_layer1)  = -0.2310
+    C(d_Ge_void_layer1, d_Ge_void_layer2)   = -0.1545
+    C(d_Ge_void_layer1, fv_Ge_void_layer2)  = -0.1162
+[[Latency]]
+    time: 28.033319 seconds
+    fit started: 2024-07-21 22:57:10
+    fit ended: 2024-07-21 22:57:38
