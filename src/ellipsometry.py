@@ -128,11 +128,6 @@ def ema_model_func(e1, e2, fv):
     e = z * (e1 * e2) ** 0.5
     return e
 
-
-# three components
-# using formulas for the material file and fitting on the variables of the formula
-
-
 def psi_delta_to_NCS(psi, delta):
     psi = np.asarray(psi)
     delta = np.asarray(delta)
