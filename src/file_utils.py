@@ -54,7 +54,6 @@ def read_dat_file(fname, AOI, wl_min, wl_max):
                 D.append(float(T[3]))
     return np.array(wl), np.array(P), np.array(D)
 
-
 def readeps(fname, wl_interp):
     """
     e12: matrix of wl, e1 and e2
