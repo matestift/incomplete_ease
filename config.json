@@ -1,46 +1,52 @@
 {
-    "wl_range": [250, 1700],
-    "data_file": "txtfiles/experiment_data.txt",
+    "wl_range": [300, 950],
+    "data_file": "txtfiles/cleaned_240425-Au_15_insitu_2_3columns.txt",
     "material_layers": [
         {
             "name": "layer1",
             "type": "composite",
-            "material1": "Ge",
-            "material2": "void",
-            "d": {"value": 100, "min": 90, "max": 300},
-            "fv": {"value": 0.6, "min": 0, "max": 1}
+            "material1": "Au",
+            "material2": "H2O",
+            "d": {"value": 50, "min": 0, "max": 300},
+            "fv": {"value": 0.5, "min": 0, "max": 1}
         },
         {
             "name": "layer2",
             "type": "composite",
-            "material1": "Si",
-            "material2": "void",
-            "d": {"value": 45, "min": 30, "max": 100},
-            "fv": {"value": 0.4, "min": 0, "max": 1}
+            "material1": "Au",
+            "material2": "H2O",
+            "d": {"value": 50, "min": 0, "max": 300},
+            "fv": {"value": 0.5, "min": 0, "max": 1}
         },
         {
             "name": "layer3",
-            "type": "single",
-            "material": "Si",
-            "d": {"value": 20, "min": 10, "max": 100}
+            "type": "composite",
+            "material1": "Au",
+            "material2": "H2O",
+            "d": {"value": 50, "min": 0, "max": 300},
+            "fv": {"value": 0.5, "min": 0, "max": 1}
         }
-
     ],
     "materials": {
-        "Ge": {
-            "file": "matfiles/Ge.mat"
+        "Au": {
+            "file": "matfiles/Au_nk1.mat"
         },
-        "Si": {
-            "file": "matfiles/Si_JAW2.mat"
+        "H2O": {
+            "file": "matfiles/H2O_(Sellmeier).mat"
         },
         "void": {
             "n": 1,
             "e": 1
         }
     },
-    "substrate": "Ge",
+    "substrate": "Au",
     "angle": {"value": 70, "min": 60, "max": 80},
-    "fit_method": "least_squares",
+    "fit_method": "differential_evolution",
     "use_parallel": true,
-    "fit_parameters": ["fv_Ge_void_layer1","d_Si_layer3", "d_Ge_void_layer1", "fv_Si_void_layer2",  "angle"]
+    "fit_parameters": [
+        "d_Au_H2O_layer1", "fv_Au_H2O_layer1", 
+        "d_Au_H2O_layer2", "fv_Au_H2O_layer2", 
+        "d_Au_H2O_layer3", "fv_Au_H2O_layer3", 
+        "angle"
+    ]
 }
